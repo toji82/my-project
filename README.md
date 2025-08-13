@@ -32,6 +32,7 @@ php artisan migrate --seed
 
 # 終了してホストに戻る
 exit
+```  
 
 使用技術(実行環境)
 Laravel 8.x
