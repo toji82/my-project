@@ -1,0 +1,424 @@
+/* ===== Reset ===== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #2b2b2b;
+    background: #fff;
+    line-height: 1.7;
+}
+
+/* ===== Layout ===== */
+.wrap {
+    max-width: 1100px;
+    margin: 24px auto 56px;
+    padding-bottom: 40px;
+}
+
+/* ===== Header ===== */
+.admin-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 0 10px;
+    background: #fff;
+    border-bottom: 1px solid #e5ddd5;
+}
+
+.brand {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Times New Roman", Georgia, serif;
+    letter-spacing: .02em;
+    color: #6e5c50;
+}
+
+.logout-form {
+    position: absolute;
+    right: 0;
+    top: 22px;
+}
+
+.logout-form .btn {
+    font-size: 12px;
+    padding: 6px 14px;
+    background: #fff;
+    border: 1px solid #d9cfc6;
+    color: #7a6a5d;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+/* ===== Page Title ===== */
+.page-title {
+    margin: 12px 0 12px;
+    padding: 0 16px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #6e5c50;
+    font-family: "Times New Roman", Georgia, serif;
+}
+
+/* ===== Search (フラット) ===== */
+.search-bar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px 10px;
+    margin: 0 0 6px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* 入力欄：はみ出し対策（高さ・padding・line-height）＋淡色 */
+.search-bar input[type="text"],
+.search-bar input[type="date"],
+.search-bar select {
+    height: 38px;
+    /* 高さを確保 */
+    padding: 6px 10px;
+    /* 上下を気持ち少なめに */
+    line-height: 24px;
+    /* 文字/placeholderが中央に来る */
+    font-size: 14px;
+    width: 100%;
+    border-radius: 6px;
+    background: #f7f4f1;
+    /* 淡い色づけ */
+    border: 1px solid #d9cfc6;
+    color: #4b3e35;
+}
+
+.search-bar input::placeholder {
+    color: #9b8f84;
+}
+
+/* 検索ボタン（濃色）とリセット（淡色フラット） */
+.search-bar .btn {
+    height: 38px;
+    width: auto;
+    justify-self: start;
+}
+
+.search-bar .btn.primary {
+    padding: 8px 16px;
+    background: #7b6a5c;
+    color: #fff;
+    border: 1px solid #7b6a5c;
+    box-shadow: none;
+}
+
+/* リセットは <a class="btn"> を淡色フラットにする */
+.search-bar a.btn {
+    background: #f7f4f1;
+    border: 1px solid #d9cfc6;
+    color: #4b3e35;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+
+/* ===== Export（淡色フラット） ===== */
+.export-row {
+    margin: 10px 0 6px;
+    text-align: left;
+}
+
+.export-row .btn {
+    background: #f7f4f1;
+    border: 1px solid #d9cfc6;
+    color: #4b3e35;
+    padding: 6px 14px;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+/* ===== Buttons 共通 ===== */
+.btn {
+    appearance: none;
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .02s ease, opacity .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+    opacity: .95;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn.small {
+    padding: 6px 12px;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #d9cfc6;
+    color: #7a6a5d;
+}
+
+/* ===== Pagination（隙間ゼロ・角丸なし） ===== */
+.pagination.top {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 8px 0 10px;
+}
+
+.pagination {
+    margin: 12px 0;
+}
+
+.pagination>nav {
+    display: flex;
+    justify-content: center;
+}
+
+/* ul/li 形式にも nav a/span 形式にも効くよう両対応 */
+.pagination ul {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+/* 角丸ゼロ＆隙間ゼロ。中間要素の右ボーダーを消して連結表示 */
+.pagination li a,
+.pagination li span,
+.pagination nav a,
+.pagination nav span {
+    display: inline-block;
+    min-width: 30px;
+    height: 28px;
+    line-height: 26px;
+    padding: 0 8px;
+    margin: 0;
+    border: 1px solid #d9cfc6;
+    border-radius: 0;
+    /* 角丸なし */
+    background: #fff;
+    color: #4b3e35;
+    text-decoration: none !important;
+    border-right: none;
+    /* 連結 */
+}
+
+.pagination li:first-child a,
+.pagination li:first-child span,
+.pagination nav a:first-child,
+.pagination nav span:first-child {
+    border-left: 1px solid #d9cfc6;
+    /* 先頭の左枠 */
+}
+
+.pagination li:last-child a,
+.pagination li:last-child span,
+.pagination nav a:last-child,
+.pagination nav span:last-child {
+    border-right: 1px solid #d9cfc6;
+    /* 末尾の右枠を戻す */
+}
+
+/* アクティブ＆無効 */
+.pagination li.active span,
+.pagination nav .active>span,
+.pagination nav span[aria-current="page"] {
+    background: #7b6a5c;
+    border-color: #7b6a5c;
+    color: #fff;
+    font-weight: 600;
+}
+
+.pagination li.disabled span,
+.pagination nav .disabled>span {
+    opacity: .45;
+    pointer-events: none;
+}
+
+/* ===== Table ===== */
+.table-wrap {
+    margin-top: 8px;
+    padding: 0;
+}
+
+.list {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #d9cfc6;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.list th,
+.list td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #d9cfc6;
+    text-align: left;
+}
+
+.list thead th {
+    background: #8b7463;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.list tbody tr:hover {
+    background: #faf7f4;
+}
+
+.th-action {
+    width: 120px;
+}
+
+.empty {
+    text-align: center;
+    color: #6b5b50;
+    padding: 28px 0;
+}
+
+/* ===== Modal ===== */
+.modal[hidden] {
+    display: none !important;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+}
+
+.modal-dim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    backdrop-filter: blur(1px);
+}
+
+.modal-body {
+    position: relative;
+    width: min(820px, calc(100% - 32px));
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .25);
+    padding: 28px 28px 22px;
+    z-index: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+/* ===== 詳細DL ===== */
+.md-wrap {
+    padding-top: 12px;
+}
+
+.md-dl {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    border: 1px solid #e6ded8;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.md-dl dt,
+.md-dl dd {
+    margin: 0;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee7e2;
+}
+
+.md-dl dt {
+    background: #f4eee9;
+    color: #6b5b50;
+    font-weight: 600;
+}
+
+.md-dl dd {
+    background: #fff;
+    color: #3b342e;
+}
+
+.md-dl dd.md-multiline {
+    white-space: pre-wrap;
+}
+
+.md-dl dt:nth-last-child(2),
+.md-dl dd:last-child {
+    border-bottom: none;
+}
+
+.md-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.btn.danger {
+    background: #a33a2c;
+    color: #fff;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(163, 58, 44, .25);
+}
+
+.btn.danger:hover {
+    opacity: .95;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+    .search-bar {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .admin-header {
+        padding: 22px 0 8px;
+    }
+
+    .logout-form {
+        top: 12px;
+    }
+
+    .search-bar {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}

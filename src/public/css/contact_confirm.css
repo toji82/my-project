@@ -1,0 +1,168 @@
+/* ===== Confirm Page (scoped with .cc-*) ===== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff !important;
+    /* ページ全体を白 */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #2b2b2b;
+    line-height: 1.8;
+}
+
+/* Header：フォーム側と同じ雰囲気（白＋下線、中央・セリフ体） */
+.cc-header {
+    background: #fff;
+    border-bottom: 1px solid #e5ddd5;
+}
+
+.cc-header-inner {
+    max-width: 900px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cc-logo {
+    margin: 0;
+    font-size: 28px;
+    font-family: serif;
+    font-weight: 400;
+    color: #5a4c42;
+}
+
+/* Panel：フォームのカードに合わせる */
+.cc-main {
+    padding: 60px 20px 80px;
+}
+
+.cc-panel {
+    border: none !important;
+        border-radius: 0 !important;
+}
+
+.cc-title {
+    text-align: center;
+    margin: 0 0 24px;
+    font-size: 28px;
+    font-family: serif;
+    font-weight: 400;
+    color: #5a4c42;
+    letter-spacing: .02em;
+}
+
+/* 表：フォームの「枠線薄め・角丸小さめ」に寄せる */
+.cc-confirm {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    /* ラベル列を少し狭めて中央に寄せる */
+    border: 1px solid #e6ded8;
+    overflow: hidden;
+    background: #fff;
+}
+
+.cc-confirm dt,
+.cc-confirm dd {
+    margin: 0;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e9e3de;
+}
+
+.cc-confirm dt {
+    background: #bba796;
+    /* ラベル列のベージュ（少し落ち着いた色） */
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.cc-confirm dd {
+    background: #fff;
+}
+
+.cc-multiline {
+    white-space: pre-wrap;
+}
+
+/* 最終行の下線を消す */
+.cc-confirm dt:nth-last-child(2),
+.cc-confirm dd:last-child {
+    border-bottom: none;
+}
+
+/* ボタン：色はそのまま、影と角丸を控えめに */
+.cc-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+.cc-btn {
+    appearance: none;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity .2s ease, transform .02s ease;
+}
+
+.cc-btn:active {
+    transform: translateY(1px);
+}
+
+.cc-btn-primary {
+    background: #5a4c42;
+    color: #fff;
+}
+
+.cc-btn-primary:hover {
+    opacity: .95;
+}
+
+.cc-btn-ghost {
+    background: #efe8e2;
+    color: #54463b;
+}
+
+.cc-btn-ghost:hover {
+    opacity: .95;
+}
+
+/* SP */
+@media (max-width:640px) {
+    .cc-confirm {
+        grid-template-columns: 1fr;
+    }
+
+    .cc-confirm dt {
+        border-bottom: none;
+    }
+
+    .cc-confirm dt+dd {
+        border-top: 1px solid #e9e3de;
+    }
+}
+
+/* 確実に白にする（他CSSが後勝ちでも勝つ） */
+html,
+body.page-confirm {
+    background: #fff !important;
+}
+
+/* 念のためヘッダーも統一 */
+.page-confirm .cc-header {
+    background: #fff !important;
+    border-bottom: 1px solid #e5ddd5 !important;
+}

@@ -1,0 +1,118 @@
+/* ===== Thanks Page (scoped with .ct-*) ===== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    /* まっ白 */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #4a4038;
+    line-height: 1.8;
+}
+
+/* ヘッダーは非表示（左の完成イメージに合わせる） */
+.ct-header {
+    display: none;
+}
+
+/* 余白感 */
+.ct-main {
+    padding: 80px 16px;
+}
+
+/* ヒーロー領域 */
+.ct-hero {
+    position: relative;
+    width: 100%;
+    /* 画面幅いっぱい */
+    margin: 0 auto;
+    min-height: 65vh;
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    /* 背景文字を隠さない */
+    background: #fff;
+}
+
+/* 背景の “Thank you”：上品なセリフ体＋超薄トーン＋1行表示 */
+.ct-hero-bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    white-space: nowrap;
+    /* 折り返しなし */
+    line-height: 1;
+    font-family: "Times New Roman", Georgia, "YuMincho", "游明朝", serif;
+    font-weight: 400;
+    letter-spacing: .035em;
+    font-size: clamp(140px, 18vw, 520px);
+    /* you までしっかり見えるサイズ */
+    color: rgba(90, 76, 66, .06);
+    /* ブランドブラウンを極薄に */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 中央コンテンツ */
+.ct-hero-center {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* 見出し：字間を詰める */
+.ct-hero-text {
+    margin: 0 0 18px;
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+    color: #6b5b50;
+    letter-spacing: -0.02em;
+    /* 日本語の字間をキュッと */
+    font-feature-settings: "palt" 1, "kern" 1;
+    font-kerning: normal;
+}
+
+/* ボタン：四角・影なし・字間をさらに詰める */
+.ct-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 22px;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    /* 角丸なし */
+    box-shadow: none;
+    /* 影なし */
+    cursor: pointer;
+    letter-spacing: -0.03em;
+    /* HOME の字間を詰める */
+}
+
+.ct-btn-primary {
+    background: #5a4c42;
+    /* サイトの濃ブラウン */
+    color: #fff;
+}
+
+.ct-btn-primary:hover {
+    opacity: .95;
+}
+
+/* small screens */
+@media (max-width: 640px) {
+    .ct-main {
+        padding: 56px 12px;
+    }
+
+    .ct-hero {
+        min-height: 60vh;
+    }
+}

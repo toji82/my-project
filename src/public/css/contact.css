@@ -1,0 +1,167 @@
+/* === Contact page (背景を白に統一) === */
+html,
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", sans-serif;
+    background: #fff;
+    /* ← 背景を白 */
+}
+
+.header {
+    background: #fff;
+    /* ← ヘッダーも白 */
+    border-bottom: 1px solid #e5ddd5;
+    padding: 20px 0;
+}
+
+.header-inner {
+    position: relative;
+    height: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 26px;
+    font-family: serif;
+    color: #5a4c42;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    /* 背景は指定せず白を継承 */
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid #e5ddd5;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .03);
+    padding: 40px;
+    width: 760px;
+}
+
+.title {
+    font-family: serif;
+    color: #5a4c42;
+    text-align: center;
+    margin: 0 0 24px;
+}
+
+.row {
+    margin-bottom: 18px;
+}
+
+.row>label {
+    display: block;
+    margin-bottom: 6px;
+    color: #6a5a50;
+}
+
+.req {
+    color: #cb6b6b;
+    margin-left: 4px;
+}
+
+/* 入力欄は従来のまま */
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: #f5f3f1;
+    border: 1px solid #e4dfda;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.select select {
+    appearance: none;
+    background: #f5f3f1 url("data:image/svg+xml,%3Csvg width='12' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 6 5-6' stroke='%238c7c6f' fill='none' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 10px center;
+    background-size: 12px 8px;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.split.tel {
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+}
+
+.split.tel .dash {
+    align-self: center;
+    color: #b8b0a8;
+}
+
+.radios label {
+    margin-right: 20px;
+    color: #6a5a50;
+}
+
+.err {
+    color: #c03;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.btn {
+    background: #5a4c42;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.linklike {
+    background: none;
+    border: none;
+    color: #6a5a50;
+    text-decoration: underline;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.confirm {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    row-gap: 10px;
+    column-gap: 16px;
+    margin-bottom: 20px;
+    color: #5a4c42;
+}
+
+.confirm dt {
+    text-align: right;
+    opacity: .8;
+}
+
+.confirm dd {
+    margin: 0;
+}
+
+.confirm-actions {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
