@@ -34,18 +34,16 @@ php artisan migrate --seed
 exit
 ```  
 
-使用技術(実行環境)
-Laravel 8.x
-PHP 8.0+（コンテナ内）
-MySQL 8.0.26
-Docker / Docker Compose（最新）
-Node.js 20.x（フロントビルドが必要な場合）
+## 使用技術(実行環境)
+- Laravel 8.x
+- PHP 8.0+（コンテナ内）
+- MySQL 8.0.26
+- Docker / Docker Compose（最新）
+- Node.js 20.x（フロントビルドが必要な場合）
 
-ER図
+## ER図
 ![ER図](./image.png)
 
-
-URL
-開発環境: http://localhost/
-
-phpMyAdmin: http://localhost:8080/
+## URL
+- 開発環境: http://localhost/
+- phpMyAdmin: http://localhost:8080/
